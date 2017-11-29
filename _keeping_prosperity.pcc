@@ -1,0 +1,10 @@
+CAMPAIGN:Keeping Prosperity
+GAMEMODE:Pathfinder
+TYPE:Homebrew
+STATUS:ALPHA
+GENRE:Fantasy
+BOOKTYPE:Supplement
+SETTING:Generic
+PRECAMPAIGN:1,BOOKTYPE=Core Rules
+
+EQUIPMENT:kp_equipment.lst
