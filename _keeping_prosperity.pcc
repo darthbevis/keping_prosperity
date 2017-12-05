@@ -8,3 +8,4 @@ SETTING:Generic
 PRECAMPAIGN:1,BOOKTYPE=Core Rules
 
 EQUIPMENT:kp_equipment.lst
+ABILITY:kp_abilities.lst
