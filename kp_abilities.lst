@@ -1,1 +1,23 @@
+#TEMPBONUS for Offensive Defence AC
 CATEGORY=Special Ability|Rogue Talent ~ Offensive Defense.MOD	TEMPBONUS:PC|COMBAT|AC|SneakAttackDice|TYPE=Dodge
+
+#Creating Deeds Category to track used Deeds
+CATEGORY=Internal|Default.MOD	DEFINE:DeedPool|0	BONUS:VAR|DeedPool|PanachePoints+GritPoints+LuckPoints
+Use Deed	CATEGORY:Special Ability	TYPE:Deeds	DESC:Test	BONUS:VAR|DeedPool|-1	COST:0	MULT:YES	STACK:YES	CHOOSE:ABILITY|Special Ability|PC[TYPE=DeedsHasGritCost]|PC[TYPE=DeedsHasPanacheCost]|PC[TYPE=DeedsHasLuckCost]	PREVARGT:DeedPool,0
+Regain Grit/Panace/Luck	CATEGORY:Special Ability	TYPE:Deeds	DESC:Test	BONUS:VAR|DeedPool|1	COST:0	MULT:YES	STACK:YES	CHOOSE:NOCHOICE	PREVARLT:DeedPool,GritLimit+Panache_Max+Luck_Max
+CATEGORY=Internal|Archetype Display.MOD	ABILITY:Deeds|AUTOMATIC|Deeds Display|PREVARGT:DeedPool,0
+Deeds Display	CATEGORY:Special Ability	TYPE:Deeds		VISIBLE:NO
+
+#Marking Underfoot Assault as having a cost so you can spend it
+CATEGORY=Special Ability|Mouser ~ Underfoot Assault.MOD	TYPE:DeedsHasPanacheCost
+
+#Adding Luck Pool
+CATEGORY=Special Ability|Sleuth ~ Sleuth's Luck.MOD	DEFINE:Luck_Max|0	BONUS:VAR|Luck_Max|MAX(1,CHA)	DEFINE:LuckPoints|0	BONUS:VAR|LuckPoints|MAX(1,CHA)
+CATEGORY=Special Ability|Display Combined Grit Panache Luck.MOD	BONUS:VAR|GritPanacheLuckPoints|Luck_Max
+
+#Making Sleuth Deeds have a cost
+CATEGORY=Special Ability|Deed ~ Daring.MOD	TYPE:DeedsHasLuckCost
+CATEGORY=Special Ability|Deed ~ Opportunistic Evasion.MOD	TYPE:DeedsHasLuckCost
+
+#Making Initiative bonus on Sleuth's initiative
+CATEGORY=Special Ability|Deed ~ Sleuth's Initiative.MOD	BONUS:COMBAT|INITIATIVE|2|PREVARGT|DeedPool,0
