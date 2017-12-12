@@ -10,3 +10,4 @@ PRECAMPAIGN:1,BOOKTYPE=Core Rules
 EQUIPMENT:kp_equipment.lst
 ABILITY:kp_abilities.lst
 ABILITYCATEGORY:kp_grit_abilitycategories.lst
+TEMPLATE:kp_template.lst
