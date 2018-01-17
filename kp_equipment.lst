@@ -4,7 +4,7 @@ Myran's Fang.MOD	TYPE:Weapon Group Melee Light Piercing	EQMOD:KEEN.MAGIC_COST|79
 Ring of Lesser Security	TYPE:Magic.Ring		COST:24000	WT:0	SR:13	BONUS:COMBAT|AC|2|TYPE=Deflection	BONUS:SAVE|ALL|2|TYPE=Resistance
 
 Lion's Shield.COPY=Daralla's Shield
-Daralla's Shield.MOD	PROFICIENCY:WEAPON|Shieldbash	EQMOD:PLUS2W.ADAMANT_WEAP.ARW_DEF	TYPE:Weapon.Resizable.Melee.OneHanded.Martial.Standard.Bludgeoning	BONUS:WEAPON|TOHIT|-4|PREWEAPONPROF:1,Shieldbash
+Daralla's Shield.MOD	PROFICIENCY:WEAPON|Shieldbash	EQMOD:PLUS2W.ADAMANT_WEAP.ARW_DEF	TYPE:Weapon.Resizable.Melee.OneHanded.Martial.Standard.Bludgeoning	BONUS:WEAPON|TOHIT|-4|PREWEAPONPROF:1,Shieldbash	SPROP:the shields bite does 1d6 lightning damage|PREPCLEVEL:MIN=4
 
 Lantern of Darkvision	TYPE:Magic.Wondrous		COST:0	WT:2	VISION:Darkvision (60')	TYPE:LesserMajor
 
