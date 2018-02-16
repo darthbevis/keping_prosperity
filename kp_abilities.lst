@@ -21,3 +21,9 @@ CATEGORY=Special Ability|Deed ~ Opportunistic Evasion.MOD	TYPE:DeedsHasLuckCost
 
 #Making Initiative bonus on Sleuth's initiative
 CATEGORY=Special Ability|Deed ~ Sleuth's Initiative.MOD	BONUS:COMBAT|INITIATIVE|2|PREVARGT|DeedPool,0
+
+#Ninja Tricks
+CATEGORY=Internal|Default.MOD	DEFINE:KiTrackingPool|0	BONUS:VAR|KiTrackingPool|KiPoints
+Use Ki	CATEGORY:Special Ability	TYPE:KiUse	DESC:Test	BONUS:VAR|KiTrackingPool|-1	COST:0	MULT:YES	STACK:YES	CHOOSE:ABILITY|Special Ability|PC[TYPE=NinjaTrick]	PREVARGT:KiTrackingPool,0	DESC:For tracking the use of Ki as a ninja.  %1 of %2 Ki remaining.|KiTrackingPool|KiPoints
+CATEGORY=Internal|Archetype Display.MOD	ABILITY:Ki Use|AUTOMATIC|Ki Display|PREVARGT:KiTrackingPool,0
+Ki Display	CATEGORY:Special Ability	TYPE:KiUse		VISIBLE:NO
